@@ -1,13 +1,6 @@
-
 <div class="content-wrapper">
     <section class="content-header">
-        <h1>Halaman Pesanan Mobil <small>form data Pesanan Mobil</small></h1>
-        <ol class="breadcrumb">
-            <li>
-                <a href="#"><i class="fa fa-dashboard"></i> Level</a>
-            </li>
-            <li class="active">Here</li>
-        </ol>
+        <h1><b>Daftar Pasien</b></h1>
     </section>
     <section class="content">
         <div class="row">
@@ -23,22 +16,16 @@
                                     <?php echo $this->session->userdata('message') <> '' ? $this->session->userdata('message') : ''; ?>
                                 </div>
                             </div>   
-                            <div class="col-md-12 text-right">
-                                    <?php echo anchor(site_url('Transaksi/create'), '+ Tambah Pesanan', 'class="btn btn-primary"'); ?>
-                            </div>               
+                                         
                         </div>
                         <br><br>
                         <table class='table table-bordered table-striped' id='mytable'>
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>KODE TRANSAKSI</th>
-                        		<th>ID USER</th>
-                        		<th>TGL ORDER</th>
-                        		<th>TOTAL PEMBAYARAN</th>
-                        		<th>TGL PEMBAYARAN</th>
-                        		<th>STATUS PEMBAYARAN</th>
-                        		<th>Action</th>
+                        		<th>Tanggal Kunjungan</th>
+                        		<th>Nama Pasien</th>
+                        		<th> </th>
                             </tr>
                         </thead>
                         <tbody><?php
@@ -46,21 +33,13 @@
                             foreach ($transaksi_data as $transaksi)
                             { ?>
                                 <tr>
-                            		<td width="80px"><?php echo ++$start ?></td>
-                                    <td><?php echo $transaksi->KODE_TRANSAKSI ?></td>
-                            		<td><?php echo $transaksi->ID_USER ?></td>
-                            		<td><?php echo $transaksi->TGL_ORDER ?></td>
-                            		<td>Rp. <?php echo number_format($transaksi->TOTAL_PEMBAYARAN) ?></td>
-                            		<td><?php echo $transaksi->TGL_PEMBAYARAN ?></td>
-                            		 <td><?php if($transaksi->STATUS_PEMBAYARAN==1){
-                                            echo "Lunas";
-                                        }else{
-                                            echo "Belum Lunas";
-                                        }
+                            		<td width="100px"><?php echo ++$start ?></td>
+                                    <td width="150px"><?php echo $transaksi->TGL_PEMBAYARAN ?></td>
+                            		<td width="150px"><?php echo $transaksi->STATUS_PEMBAYARAN 
                                     ?></td>
-                            		<td style="text-align:center" width="200px">
+                            		<td style="text-align:center" width="300px">
                             			<?php 
-                            			echo anchor(site_url('transaksi/detail_pesanan/'.$transaksi->KODE_TRANSAKSI),'Detail'); 
+                            			echo anchor(site_url('transaksi/detail_pesanan/'.$transaksi->KODE_TRANSAKSI),'Lihat Selengkapnya'); 
                             			// echo ' | '; 
                             			// echo anchor(site_url('transaksi/update/'.$transaksi->KODE_TRANSAKSI),'Confirm'); 
                             			// echo ' | '; 

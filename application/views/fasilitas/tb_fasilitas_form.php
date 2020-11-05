@@ -3,7 +3,7 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>Halaman Fasilitas Mobil <small>form data Fasilitas Mobil</small></h1>
+            <h1>Pembayaran <small>form data Fasilitas Mobil</small></h1>
             <ol class="breadcrumb">
                 <li>
                     <a href="#"><i class="fa fa-dashboard"></i> Level</a>

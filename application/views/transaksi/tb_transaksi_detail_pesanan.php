@@ -1,13 +1,7 @@
 
 <div class="content-wrapper">
         <section class="content-header">
-            <h1>Halaman Fasilitas Mobil <small>Detail Data</small></h1>
-            <ol class="breadcrumb">
-                <li>
-                    <a href="#"><i class="fa fa-dashboard"></i> Level</a>
-                </li>
-                <li class="active">Here</li>
-            </ol>
+            <h1><b>Data Pasien</b></h1>      
         </section>
         <section class="content">
             <div class="row">
@@ -16,19 +10,23 @@
 
 
                         <div class="box-header with-border">
-                            <h3 class="box-title">Fasilitas Mobil</h3>
+                            
+                             <div class="col-md-12 text-right">
+                                        <?php echo anchor(site_url('mobil/create'), 'Cetak Bukti Pembayaran', 'class="btn btn-primary"'); ?>
+ 
+                                </div> 
                         </div>
                         
                         <div class="box-body">
 
                             <table class="table">
-                        	    <tr><td>NAMA USER</td><td><?php echo $NAMA_USER; ?></td></tr>
-                        	    <tr><td>TGL ORDER</td><td><?php echo $TGL_ORDER; ?></td></tr>
-                        	    <tr><td>TOTAL PEMBAYARAN</td><td>Rp. <?php echo number_format($TOTAL_PEMBAYARAN); ?></td></tr>
-                        	    <tr><td>TGL PEMBAYARAN</td><td><?php echo $TGL_PEMBAYARAN; ?></td></tr>
+                        	    <tr><td>Nama</td><td><?php echo 'Talita Syarifah'; ?></td></tr>
+                        	    <tr><td>Tanggal Lahir</td><td><?php echo '12/11/1995'; ?></td></tr>
+                        	    <tr><td>Nomor Telepon</td><td><?php echo '085755900182' ?></td></tr>
+                        	    <tr><td>Email</td><td><?php echo 'talita@gmail.com'; ?></td></tr>
                         	    <!-- <tr><td>BUKTI PEMBAYARAN</td><td><img src="<?php echo base_url('upload/bukti_pembayaran/'.$BUKTI_PEMBAYARAN); ?>" width="200px"></td></tr> -->
-                        	    <tr><td>STATUS PEMBAYARAN</td><td><?php if ($STATUS_PEMBAYARAN==0){echo "MENUNGGU PEMBAYARAN";}else{echo "SUDAH DIBAYAR"; }?></td></tr>
-                        	    <tr><td>STATUS TRANSAKSI</td><td><?php if ($STATUS_TRANSAKSI==0){echo "MENUNGGU DIPROSES";}else if($STATUS_TRANSAKSI==1){echo "BERJALAN"; }else{echo "SELESAI";}?></td></tr>
+                        	    <tr><td>Alamat</td><td><?php echo 'Dinoyo Sekolahan 2/1 Surabaya';?></td></tr>
+                        	    <tr><td>Dokter</td><td><?php echo 'dr. Arina Salsabila. Sp.OG';?></td></tr>
                               <!--   <tr><td>DENDA</td><td>Rp. <?php echo number_format($STATUS_TRANSAKSI); ?></td></tr>
                                 <tr><td>DANA KEMBALI</td><td>Rp. <?php echo number_format($DANA_KEMBALI); ?></td></tr> -->
                         	</table>
@@ -37,12 +35,11 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>NAMA MOBIL</th>
-                                        <th>PLAT</th>
-                                        <th>TANGGAL SEWA</th>
-                                        <th>TANGGAL AKHIR SEWA</th>
-                                        <th>HARGA PERHARI</th>
-                                        <th>TOTAL BAYAR</th>
+                                        <th>Tanggal Kunjungan</th>
+                                        <th>Aktivitas</th>
+                                        <th>Pembayaran (Rp)</th>
+                                        <th>Metode Pembayaran</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -60,17 +57,16 @@
                                         
                                     <tr>
                                         <td><?php echo ++$start ?></td>
-                                        <td><?php echo $transaksi->NAMA_MOBIL ?></td>
-                                        <td><?php echo $transaksi->PLAT_NO_MOBIL ?></td>
                                         <td><?php echo $transaksi->TGL_SEWA ?></td>
-                                        <td><?php echo $transaksi->TGL_AKHIR_PENYEWAAN ?></td>
+                                        <td><?php echo 'Konsultasi'?></td>
                                         <td>Rp. <?php echo number_format($transaksi->HARGA_MOBIL) ?></td>
-                                        <td>Rp. <?php echo number_format($transaksi->TOTAL) ?></td>
+                                        <td><?php echo 'Tunai'?></td>
+                                        <td><?php echo 'Belum Lunas'?></td>
                                         <td>
                                                 <a href="<?php echo site_url('transaksi/confirm/'.$transaksi->KODE_TRANSAKSI) ?>">
                                                     <button class="btn btn-primary btn-sm" onclick="javasciprt: return confirm('Are You Sure ?')" 
                                                     >Confirm</button></a>
-                                                <a href="<?php echo site_url('transaksi/cancel/'.$transaksi->KODE_TRANSAKSI) ?>" ><button class="btn btn-danger btn-sm" onclick="javasciprt: return confirm('Are You Sure ?')">Cancel</button></a>                      
+                                                <a href="<?php echo site_url('transaksi/cancel/'.$transaksi->KODE_TRANSAKSI) ?>" ><button class="btn btn-danger btn-sm" onclick="javasciprt: return confirm('Are You Sure ?')">Hapus</button></a>                      
                                         </td>
                                     </tr>
                                         <?php

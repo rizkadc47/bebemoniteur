@@ -1,7 +1,7 @@
 
 <div class="content-wrapper">
         <section class="content-header">
-            <h1>Halaman Fasilitas Mobil <small>Detail Data</small></h1>
+            <h1><b>Data Pasien</b></h1>
             <ol class="breadcrumb">
                 <li>
                     <a href="#"><i class="fa fa-dashboard"></i> Level</a>

@@ -63,7 +63,7 @@ class Mobil extends CI_Controller
     public function create() 
     {
         $data = array(
-            'button' => 'Create',
+            'button' => 'create',
             'action' => site_url('mobil/create_action'),
     	    'ID_MOBIL' => set_value('ID_MOBIL'),
     	    'NAMA_MOBIL' => set_value('NAMA_MOBIL'),
@@ -79,6 +79,36 @@ class Mobil extends CI_Controller
 	        'STATUS_MOBIL' => set_value('STATUS_MOBIL'),
 	        'CREATED_MOBIL' => set_value('CREATED_MOBIL'),
     	);
+        $data['fasilitas']=$this->M_fasilitas_admin->get_all();
+        
+        foreach ($data['fasilitas'] as $var) {
+            $data['fasilitas_mobil'][$var->ID_FASILITAS]="";
+        }
+            
+        // $data['fasilitas_mobil']=$this->M_fasilitas_mobil_admin->get_by_id(0);
+        $this->load->view('template/header');
+        $this->load->view('mobil/tb_mobil_form', $data);
+        $this->load->view('template/footer');        
+    }
+    public function cetak() 
+    {
+        $data = array(
+            'button' => 'cetak',
+            'action' => site_url('mobil/create_action'),
+            'ID_MOBIL' => set_value('ID_MOBIL'),
+            'NAMA_MOBIL' => set_value('NAMA_MOBIL'),
+            'MERK_MOBIL' => set_value('MERK_MOBIL'),
+            'DESKRIPSI_MOBIL' => set_value('DESKRIPSI_MOBIL'),
+            'TAHUN_MOBIL' => set_value('TAHUN_MOBIL'),
+            'KAPASITAS_MOBIL' => set_value('KAPASITAS_MOBIL'),
+            'HARGA_MOBIL' => set_value('HARGA_MOBIL'),
+            'WARNA_MOBIL' => set_value('WARNA_MOBIL'),
+            'BENSIN_MOBIL' => set_value('BENSIN_MOBIL'),
+            'PLAT_NO_MOBIL' => set_value('PLAT_NO_MOBIL'),
+            'STATUS_SEWA' => set_value('STATUS_SEWA'),
+            'STATUS_MOBIL' => set_value('STATUS_MOBIL'),
+            'CREATED_MOBIL' => set_value('CREATED_MOBIL'),
+        );
         $data['fasilitas']=$this->M_fasilitas_admin->get_all();
         
         foreach ($data['fasilitas'] as $var) {

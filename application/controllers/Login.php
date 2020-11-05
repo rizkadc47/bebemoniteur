@@ -26,7 +26,7 @@ class login extends CI_Controller
 		
 		if ($user) {
 			$this->session->set_userdata((array)$user);
-			redirect(site_url("mobil"));
+			redirect(site_url("beranda"));
 		}else{
 			redirect($this->index());
 		}

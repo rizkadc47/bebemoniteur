@@ -4,10 +4,10 @@ This is a Kredit Motor template page. Use this page to start your new project fr
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
-<head>
+<head >
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Sistem | Rental Mobil</title>
+  <title>BEBE MONITEUR | Aplikasi Pantau Kehamilan</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -44,26 +44,41 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="<?php echo base_url('assets/datatables/dataTables.bootstrap.css') ?>"/>
   <link rel="stylesheet" href="<?php echo base_url('assets/datatables/dataTables.bootstrap.css') ?>"/>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
-  <header class="main-header">
+  <header class="main-header" style="background-color: #eda5a6">
 
     <!-- Logo -->
     <a href="<?php echo base_url();?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini">
+        <style>
+          img {width: 10px;}
+          img {height: 10px;}
+        </style>
+        <img src='/assets/img/bebeicon.png' alt='bebeicon'/>
+      </span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Sistem</b> Rental Mobil</span>
+      <span class="logo-lg" style='color: white'>BEBE MONITEUR</span>
     </a>
 
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
       <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button" style='color: white'>
         <span class="sr-only">Toggle navigation</span>
       </a>
+        <style>
+          h3 {color: white;}
+          h3 {font-size: 20px;}
+          h3 {margin-top: 12px;}
+          h3 {text-align: left;}
+        </style>
+
+        <h3> Aplikasi Pantau Kehamilan</h3>
+      
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
@@ -74,51 +89,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- Notifications Menu -->
           
           <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
-            <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- The user image in the navbar-->
-              <img src="<?php echo base_url('/upload/avatars/'.$this->session->userdata('PHOTO'));?>" class="user-image" alt="User Image">
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs"><?php echo $this->session->userdata("NAME");?></span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
-              <li class="user-header">
-                <img src="<?php echo base_url('/upload/avatars/'.$this->session->userdata('PHOTO'));?>" class="img-circle" alt="User Image">
-
-                <p>
-                  <?php echo $this->session->userdata("NAME");?> - Web Developer
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                
-                <div class="pull-right">
-                  <a href="<?php echo site_url("Login/logout");?>" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
+          
         </ul>
       </div>
     </nav>
   </header>
   <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
+  <aside class="main-sidebar" style="background-color: #989292">
 
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
@@ -134,7 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- search form (Optional) -->
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <input type="text" name="q" class="form-control" placeholder="Cari">
               <span class="input-group-btn">
                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
@@ -145,15 +125,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <li class="header">HEADER</li>
+        
         <!-- Optionally, you can add icons to the links -->
-        <li><a href="<?php echo site_url('mobil');?>"><i class="fa fa-car"></i> <span>Mobil</span></a></li>
-        <li><a href="<?php echo site_url('fasilitas');?>"><i class="fa fa-life-ring"></i> <span>Fasilitas Mobil</span></a></li>  
-        <li><a href="<?php echo site_url('transaksi');?>"><i class="fa fa-shopping-cart "></i> <span>Pesanan</span></a></li>
-        <li><a href="<?php echo site_url('transaksi/proses_list');?>"><i class="fa fa-area-chart"></i> <span>Proses Peminjaman</span></a></li>
-        <li><a href="<?php echo site_url('transaksi/selesai_list');?>"><i class="fa fa-check"></i> <span>Transaksi Selesai</span></a></li>
+        <li><a href="<?php echo site_url('beranda');?>"><i class="fa fa-home fa-lg"style='color: #c1c1c1'></i> <span style='color: white'>Beranda</span></a></li>
+        <li><a href="<?php echo site_url('mobil');?>"><i class="fa fa-user" style='color: #c1c1c1'></i> <span style='color: white'>Profil</span></a></li>
+        <li><a href="<?php echo site_url('pembayaran');?>"><i class="fa fa-credit-card-alt" style='color: #c1c1c1'></i> <span style='color: white'>Pembayaran</span></a></li> 
+        <li><a href="<?php echo site_url('transaksi');?>"><i class="fa fa-check-square-o" style='color: #c1c1c1'></i> <span style='color: white'>Konfirmasi Pembayaran</span></a></li>  
+        <li><a href="<?php echo site_url('tentangaplikasi');?>"><i class="fa fa-info-circle" style='color: #c1c1c1'></i> <span style='color: white'>Tentang Aplikasi</span></a></li>
+        <li><a href="<?php echo site_url("Login/logout");?>"><i class="fa fa-sign-out" style='color: #c1c1c1'></i> <span style='color: white'>Logout</span></a></li>
     <!--     <li><a href="<?php echo site_url('users');?>"><i class="fa fa-area-chart"></i> <span>Denda</span></a></li>   -->             
-        <li><a href="<?php echo site_url('users');?>"><i class="fa fa-user"></i> <span>Users</span></a></li>               
+        <!-- <li><a href="<?php echo site_url('users');?>"><i class="fa fa-user"></i> <span>Users</span></a></li>               
 <!--         <li class="treeview">
           <a href="#"><i class="fa fa-edit"></i> <span>Coustomers</span>
             <span class="pull-right-container">
